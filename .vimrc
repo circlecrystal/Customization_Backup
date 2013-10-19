@@ -16,6 +16,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/syntastic'
 Bundle 'msanders/snipmate.vim'
+Bundle 'Shougo/vimshell.vim'
 
 filetype plugin indent on     " required!
 "
