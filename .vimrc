@@ -115,7 +115,6 @@ set undolevels=1000
 set undoreload=10000
 
 set wildmenu
-set showmatch
 
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
