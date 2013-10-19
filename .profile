@@ -1,6 +1,7 @@
 # MacPorts Installer addition on 2013-06-10_at_13:31:17: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/Library/Frameworks/Python.framework/Versions/3.3/bin/:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
+# Finished adapting PATH environment variable for Syntastic
 
 # alias the vim binary path
 # alias vim='/opt/local/bin/vim'

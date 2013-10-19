@@ -16,7 +16,6 @@ Bundle 'sjl/gundo.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/syntastic'
 Bundle 'msanders/snipmate.vim'
-" Bundle 'fholgado/minibufexpl.vim'
 
 filetype plugin indent on     " required!
 "
@@ -58,11 +57,11 @@ function! ToggleErrors()
 endfunction
 
 " Map plugin toggles
-noremap <F2> :call ToggleTagbar()<CR>
-noremap <F3> :call ToggleGundo()<CR>
-noremap <F4> :call ToggleNERDTree()<CR>
-noremap <F6> :SyntasticToggleMode<CR>
-noremap <F7> :call ToggleErrors()<CR>
+nmap <F2> :call ToggleTagbar()<CR>
+nmap <F3> :call ToggleGundo()<CR>
+nmap <F4> :call ToggleNERDTree()<CR>
+nmap <F6> :SyntasticToggleMode<CR>
+nmap <F7> :call ToggleErrors()<CR>
 
 " Powerline Setup
 set laststatus=2
@@ -136,7 +135,7 @@ set undoreload=10000
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
-noremap <F5> :wall \| !clear && echo "% is running..." && python3 %<CR>
+nmap <F5> :wall \| !clear && echo "% is running..." && python3 %<CR>
 
 " highlight characters past column 79
 autocmd FileType python
