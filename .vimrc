@@ -16,7 +16,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'msanders/snipmate.vim'
 
-filetype plugin indent on     " required!
+filetype plugin indent on  " required!
 "
 " Brief help
 " :BundleList          - list configured bundles
@@ -27,23 +27,23 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 
+
 " Powerline Setup
 set laststatus=2
 set noshowmode
 
 " Tagbar setup
 " let g:tagbar_left = 1
-let g:tagbar_autoclose = 1
-let g:tagbar_width = 40
+let g:tagbar_autoclose = 0
+let g:tagbar_width = 35
 
-" Gundo setup
+"  Gundo setup
 " let g:gundo_preview_bottom = 1
-let g:gundo_width = 40
+let g:gundo_width = 35
 let g:gundo_preview_height = 15
 let g:gundo_right = 1
 
 " Syntastic setup
-" let g:syntastic_check_on_open = 1
 let g:syntastic_python_checkers = ['pylint']
 " let g:syntastic_mode_map =
 "     \ {
@@ -56,34 +56,54 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " Plugin toggle function
-function! ToggleTagbar()
+function ToggleTagbar()
     GundoHide
+    call ErrorsClose()
     TagbarToggle
 endfunction
 
-function! ToggleGundo()
+function ToggleGundo()
     TagbarClose
+    call ErrorsClose()
     GundoToggle
 endfunction
 
-function! ToggleErrors()
-    if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"'))
-        " No location/quickfix list shown, open syntastic error location panel
+function ErrorsToggle()
+    if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype")
+                                                \ is# "quickfix"'))
         Errors
     else
         lclose
     endif
 endfunction
 
+function ErrorsClose()
+    if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype")
+                                                \ is# "quickfix"'))
+    else
+        lclose
+    endif
+endfunction
+
+function ToggleErrors()
+    TagbarClose
+    GundoHide
+    call ErrorsToggle()
+endfunction
+
+function ToggleSyntastic()
+    TagbarClose
+    GundoHide
+    SyntasticToggleMode
+endfunction
+
 " Map plugin toggles
 nmap <F2> :call ToggleTagbar()<CR>
 nmap <F3> :call ToggleGundo()<CR>
-nmap <F4> :SyntasticToggleMode<CR>
-nmap <F6> :call ToggleErrors()<CR>
+nmap <F4> :call ToggleErrors()<CR>
+nmap <F5> :call ToggleSyntastic()<CR>
 
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " My rest config follows here:
 syntax on
 colorscheme lucius
@@ -120,7 +140,7 @@ set mouse=a
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
-nmap <F5> :wall \| !clear && echo "% is running..." && python3 %<CR>
+nmap <F6> :wall \| !clear && echo "% is running..." && python3 %<CR>
 
 " highlight characters past column 79
 autocmd FileType python
