@@ -101,7 +101,7 @@ endfunction
 nmap <F2> :call ToggleTagbar()<CR>
 nmap <F3> :call ToggleGundo()<CR>
 nmap <F4> :call ToggleErrors()<CR>
-nmap <F5> :call ToggleSyntastic()<CR>
+nmap <F6> :call ToggleSyntastic()<CR>
 
 
 " My rest config follows here:
@@ -116,6 +116,7 @@ let python_highlight_all=1
 set cursorline
 
 set number
+set relativenumber
 set numberwidth=2
 
 set foldmethod=indent
@@ -140,7 +141,7 @@ set mouse=a
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
-nmap <F6> :wall \| !clear && echo "% is running..." && python3 %<CR>
+nmap <F5> :wall \| !clear && echo "% is running..." && python3 %<CR>
 
 " highlight characters past column 79
 autocmd FileType python
