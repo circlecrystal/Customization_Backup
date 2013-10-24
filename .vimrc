@@ -9,12 +9,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'davidhalter/jedi-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'msanders/snipmate.vim'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on  " required!
 "
@@ -28,13 +29,22 @@ filetype plugin indent on  " required!
 " NOTE: comments after Bundle command are not allowed..
 
 
-" Powerline Setup
-set laststatus=2
+" Airline Setup
 set noshowmode
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#default#section_truncate_width = {}
+let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
+let g:airline#extensions#quickfix#location_text = 'Location'
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#flags = 'f'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#empty_message = ''
+let g:airline#extensions#whitespace#enabled = 1
 
 " Tagbar setup
 " let g:tagbar_left = 1
-let g:tagbar_autoclose = 0
+let g:tagbar_autoclose = 1
 let g:tagbar_width = 35
 
 "  Gundo setup
@@ -110,13 +120,12 @@ colorscheme lucius
 
 let python_highlight_all=1
 
-" set laststatus=2
-" set statusline=%t%=[\ %l,%c\ ][\ %P\ ]
+set laststatus=2
+set statusline=%t%=[\ %l,%c\ ][\ %P\ ]
 
 set cursorline
 
 set number
-" set relativenumber
 set numberwidth=2
 
 set foldmethod=indent
@@ -130,7 +139,7 @@ set softtabstop=4
 
 set backspace=indent,eol,start
 
-set undofile 
+set undofile
 set undodir=~/.vim/undo
 set undolevels=1000
 set undoreload=10000
