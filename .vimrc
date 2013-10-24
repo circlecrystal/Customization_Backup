@@ -116,7 +116,7 @@ let python_highlight_all=1
 set cursorline
 
 set number
-set relativenumber
+" set relativenumber
 set numberwidth=2
 
 set foldmethod=indent
