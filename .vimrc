@@ -48,11 +48,11 @@ let g:gundo_right = 1
 " Syntastic setup
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_mode_map =
-    \ {
-    \ 'mode': 'passive',
-    \ 'active_filetypes': [],
-    \ 'passive_filetypes': ['python']
-    \ }
+        \ {
+        \ 'mode': 'passive',
+        \ 'active_filetypes': [],
+        \ 'passive_filetypes': ['python']
+        \ }
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -78,14 +78,14 @@ if executable('ag')
   " Use ag in unite grep source.
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts =
-  \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
-  \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+        \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+        \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
   let g:unite_source_grep_recursive_opt = ''
 elseif executable('ack-grep')
   " Use ack in unite grep source.
   let g:unite_source_grep_command = 'ack-grep'
   let g:unite_source_grep_default_opts =
-  \ '--no-heading --no-color -a -H'
+        \ '--no-heading --no-color -a -H'
   let g:unite_source_grep_recursive_opt = ''
 endif
 
@@ -185,7 +185,7 @@ nmap <F5> :wall \| !clear && echo "% is running..." && python3 %<CR>
 
 " highlight characters past column 79
 autocmd FileType python
-    \ highlight overlength
-    \ ctermbg=darkgrey ctermfg=white guibg=#592929
+        \ highlight overlength
+        \ ctermbg=darkgrey ctermfg=white guibg=#592929
 autocmd FileType python match overlength /\%80v.\+/
 autocmd FileType python set nowrap
