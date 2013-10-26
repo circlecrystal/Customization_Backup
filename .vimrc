@@ -18,9 +18,6 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-"Bundle 'bling/vim-airline'
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'jonathanfilip/vim-lucius'
 
 filetype plugin indent on  " required!
 "
@@ -50,8 +47,8 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_mode_map =
         \ {
         \ 'mode': 'passive',
-        \ 'active_filetypes': [],
-        \ 'passive_filetypes': ['python']
+        \ 'active_filetypes': ['python'],
+        \ 'passive_filetypes': []
         \ }
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
