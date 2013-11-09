@@ -7,11 +7,17 @@ export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/Library/Frameworks/Python.
 # alias vim='/opt/local/bin/vim'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
+# alias ptt
+alias ptt='ssh bbsu@ptt.cc'
+
 # enable the vim mode in bash
 set -o vi
 
 # enable the bash ls commande color
 export CLICOLOR=1
+
+# customize bash prompt message
+export PS1='\e[1;31m\W$\e[m '
 
 # default directory
 cd ~/Workspace/
