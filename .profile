@@ -16,8 +16,22 @@ set -o vi
 # enable the bash ls commande color
 export CLICOLOR=1
 
+# define fuction __git_ps1()
+__git_ps1 () 
+{ 
+    local b="$(git symbolic-ref HEAD 2>/dev/null)";
+    if [ -n "$b" ]; then
+        printf " %s " "${b##refs/heads/}";
+    fi
+}
+
+# define colors
+blue='\[\e[0;34m\]'
+orange='\[\e[0;1;31m\]'
+normal='\[\e[m\]'
+
 # customize bash prompt message
-export PS1='\[\e[1;31m\]\W$ \[\e[m\]'
+export PS1=''$blue'$(__git_ps1) '$orange'\w  '$normal''
 
 # default directory
 cd ~/Workspace/
