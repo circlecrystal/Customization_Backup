@@ -10,6 +10,9 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 # alias ptt
 alias ptt='ssh bbsu@ptt.cc'
 
+# alias ls
+alias ls='ls -a'
+
 # enable the vim mode in bash
 set -o vi
 
