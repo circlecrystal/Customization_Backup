@@ -21,7 +21,7 @@ __git_ps1 ()
 { 
     local b="$(git symbolic-ref HEAD 2>/dev/null)";
     if [ -n "$b" ]; then
-        printf " %s " "${b##refs/heads/}";
+        printf "%s " "${b##refs/heads/}";
     fi
 }
 
@@ -31,7 +31,8 @@ orange='\[\e[0;1;31m\]'
 normal='\[\e[m\]'
 
 # customize bash prompt message
-export PS1=''$blue'$(__git_ps1) '$orange'\w  '$normal''
+#export PS1=''$blue'$(__git_ps1)'$orange'\w '$normal''
+export PS1=''$orange'\w$ '$normal''
 
 # default directory
 cd ~/Workspace/
