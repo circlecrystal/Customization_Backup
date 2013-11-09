@@ -34,7 +34,7 @@ filetype plugin indent on  " required!
 " Tagbar setup
 "let g:tagbar_left = 1
 let g:tagbar_autoclose = 1
-let g:tagbar_width = 33
+let g:tagbar_width = 40
 
 "  Gundo setup
 "let g:gundo_preview_bottom = 1
@@ -47,7 +47,7 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_mode_map =
         \ {
         \ 'mode': 'passive',
-        \ 'active_filetypes': ['python'],
+        \ 'active_filetypes': [],
         \ 'passive_filetypes': []
         \ }
 set statusline+=%#warningmsg#

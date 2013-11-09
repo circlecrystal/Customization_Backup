@@ -17,7 +17,7 @@ set -o vi
 export CLICOLOR=1
 
 # customize bash prompt message
-export PS1='\e[1;31m\W$\e[m '
+export PS1='\[\e[1;31m\]\W$ \[\e[m\]'
 
 # default directory
 cd ~/Workspace/
