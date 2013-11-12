@@ -34,11 +34,11 @@ filetype plugin indent on  " required!
 " Tagbar setup
 "let g:tagbar_left = 1
 let g:tagbar_autoclose = 1
-let g:tagbar_width = 40
+let g:tagbar_width = 45
 
 "  Gundo setup
 "let g:gundo_preview_bottom = 1
-let g:gundo_width = 37
+let g:gundo_width = 45
 let g:gundo_preview_height = 15
 let g:gundo_right = 1
 
@@ -137,10 +137,10 @@ function ToggleSyntastic()
 endfunction
 
 " Map plugin toggles
-nmap <F2> :call ToggleTagbar()<CR>
-nmap <F3> :call ToggleGundo()<CR>
-nmap <F6> :call ToggleSyntastic()<CR>
-nmap <F7> :call ToggleErrors()<CR>
+map <F2> :call ToggleTagbar()<CR>
+map <F3> :call ToggleGundo()<CR>
+map <F6> :call ToggleSyntastic()<CR>
+map <F7> :call ToggleErrors()<CR>
 
 
 " My rest config follows here:
@@ -178,7 +178,7 @@ set timeoutlen=1000 ttimeoutlen=0
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
-nmap <F5> :wall \| !clear && echo "% is running..." && python3 %<CR>
+map <F5> :wall \| !clear && echo "% is running..." && python3 %<CR>
 
 " highlight characters past column 79
 autocmd FileType python
