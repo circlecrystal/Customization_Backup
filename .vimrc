@@ -94,6 +94,9 @@ set noshowmode
 "let g:airline_powerline_fonts = 1
 "let g:airline#extensions#default#section_truncate_width = {}
 
+" Jedi-Vim setup
+let g:jedi#popup_on_dot = 0
+
 " Plugin toggle function
 function ToggleTagbar()
     GundoHide
@@ -171,7 +174,7 @@ set undolevels=1000
 set undoreload=10000
 
 set wildmenu
-set mouse=a
+"set mouse=a
 
 set timeoutlen=1000 ttimeoutlen=0
 
