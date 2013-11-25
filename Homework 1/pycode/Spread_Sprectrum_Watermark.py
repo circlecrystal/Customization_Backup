@@ -263,6 +263,8 @@ def user_interface(
                     x_array = gs_obj.x_array_array[0], 
                     embedding_order_list = original_embedding_order_list,
                     v_array_new = ssw_obj_test.v_array)
+            print('Informed Detect Similarity:', inf_sim)
+            print('Blind Detect Similarity:', bli_sim)
         else:
             inf_sim, bli_sim = ssw_obj.calc_similarity(
                     x_array = gs_obj.x_array_array[0], 
@@ -288,7 +290,7 @@ def user_interface(
 
 if __name__=='__main__':
     user_interface(
-            original_image_name='fruits.bmp', 
+            original_image_name='airplane.bmp', 
             embedded_image_name='embedded.bmp',
             test_image_name='embedded.bmp', 
             alpha=100,
