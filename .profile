@@ -41,4 +41,4 @@ export PS1=''$orange'\w$ '$normal''
 alias mosek='~/mosek/7/tools/platform/osx64x86/bin/mosek -f'
 
 # default directory
-cd ~/Workspace/Homework/MS\ Homework\ 2013/Homework\ 1/pycode/
+cd ~/Workspace/
